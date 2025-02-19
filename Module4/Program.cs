@@ -20,11 +20,15 @@ class Program {
             Console.WriteLine($"{firstNum} divided by {secondNum} is {answer}");
         }
         catch (FormatException e) {
-            Console.WriteLine("Format Exception");
+            Console.WriteLine("Format exception");
             Console.WriteLine($"Error Message: {e.Message}");
         }
         catch (DivideByZeroException e) {
-            Console.WriteLine("Cannot Divide by Zero");
+            Console.WriteLine("Division by zero exception");
+            Console.WriteLine($"Error Message: {e.Message}");
+        }
+        catch (OverflowException e) {
+            Console.WriteLine("Overflow exception");
             Console.WriteLine($"Error Message: {e.Message}");
         }
         catch (Exception e) {
