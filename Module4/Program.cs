@@ -12,13 +12,27 @@ class Program {
         Console.WriteLine("Enter the second integer: ");
         string secondInput = Console.ReadLine();
 
-        
-        int firstNum = Convert.ToInt32(firstInput);
-        int secondNum = Convert.ToInt32(secondInput);
+        try {
+            int firstNum = Convert.ToInt32(firstInput);
+            int secondNum = Convert.ToInt32(secondInput);
 
-        int answer = Divide(firstNum, secondNum);
-        Console.WriteLine($"{firstNum} divided by {secondNum} is: {answer}");
-        
+            int answer = Divide(firstNum, secondNum);
+            Console.WriteLine($"{firstNum} divided by {secondNum} is {answer}");
+        }
+        catch (FormatException e) {
+            Console.WriteLine("Format Exception");
+            Console.WriteLine($"Error Message: {e.Message}");
+        }
+        catch (DivideByZeroException e) {
+            Console.WriteLine("Cannot Divide by Zero");
+            Console.WriteLine($"Error Message: {e.Message}");
+        }
+        catch (Exception e) {
+            Console.WriteLine("Unexpected error occurred.");
+            Console.WriteLine($"Error Message: {e.Message}");
+        }
+
+        Console.WriteLine("Exiting...");
 
     }
 
