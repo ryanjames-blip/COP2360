@@ -1,7 +1,8 @@
 
 public class Test {
+    private static Dictionary<int, string> testDict = new Dictionary<int, string>();
     public void testDictionary() {
-        Console.WriteLine("Choose From the options below to interact with the dictionary.");
+        Console.WriteLine("Choose From the options below to interact with the dictionary.\n");
         bool exitLoop = false;
         while (!exitLoop) {
             displayOptions();
@@ -9,11 +10,11 @@ public class Test {
             switch (userInput) {
                 case 1:
                     // POPULATE THE DICTIONARY
-                    Console.WriteLine("Populate");
+                    populate();
                     break;
                 case 2:
                     // DISPLAY DICTIONARY CONTENTS
-                    Console.WriteLine("Display");
+                    display();
                     break;
                 case 3:
                     // REMOVE A KEY
@@ -58,5 +59,19 @@ public class Test {
             }
         }
         return num;
+    }
+
+    private static void populate() {
+        testDict.Add(1, "Ryan");
+        testDict.Add(2, "Ivory");
+        testDict.Add(3, "Ismael");
+    }
+
+    private static void display() {
+        Console.WriteLine("\n***Displaying Dictionary Contents***\n");
+        foreach(var entry in testDict) {
+            Console.WriteLine($"Key: {entry.Key} Value: {entry.Value}");
+        }
+        Console.WriteLine();
     }
 }
