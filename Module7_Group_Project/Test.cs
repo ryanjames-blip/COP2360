@@ -28,11 +28,11 @@ public class Test {
                     break;
                 case 5:
                     // add a new value to the specified key
-                    Console.WriteLine("Change a key's value");
+                    changeValue();
                     break;
                 case 6:
                     // sort the dictionary
-                    Console.WriteLine("Sort");
+                    sortDictionary();
                     break;
                 case 7:
                     Console.WriteLine("Exiting...");
@@ -48,7 +48,7 @@ public class Test {
     private static void displayOptions() {
         Console.WriteLine("---MENU---\n");
         Console.WriteLine("1. Populate the dictionary.\n2. Display Contents\n3. Remove a Key.");
-        Console.WriteLine("4. Add New Key and Value\n5. Add new Value to Key\n6. Sort\n7. Exit");
+        Console.WriteLine("4. Add New Key and Value\n5. Change a Key's Value\n6. Sort\n7. Exit");
     }
 
     private static int getChoice() {
@@ -137,10 +137,32 @@ public class Test {
     }
 
     private static void changeValue() {
-        // TODO: Change the value of a specified key
+        Console.WriteLine("Enter the key to change: ");
+        int keyToChange;
+        while (true) {
+            try {
+                keyToChange = Convert.ToInt32(Console.ReadLine());
+                break;
+            }
+            catch (Exception e) {
+                Console.WriteLine(e.Message);
+            }
+        }
+        if (!testDict.ContainsKey(keyToChange)) {
+            Console.WriteLine("Key does not exist");
+        }
+        else {
+            Console.WriteLine($"Existing: {keyToChange} -- {testDict[keyToChange]}");
+            Console.WriteLine("Enter new value: ");
+            string newValue = Console.ReadLine();
+            testDict[keyToChange] = newValue;
+            Console.WriteLine($"New: {keyToChange} -- {testDict[keyToChange]}");
+        }
     }
 
     private static void sortDictionary() {
-        //TODO: Sort the dictionary
+        foreach (KeyValuePair<int, string> entry in testDict.OrderBy(x => x.Key)) {
+            Console.WriteLine($"Key: {entry.Key}, Value: {entry.Value}");
+        }
     }
 }
