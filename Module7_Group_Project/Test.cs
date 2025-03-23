@@ -24,7 +24,7 @@ public class Test {
                     break;
                 case 4:
                     // add a new key, value pair
-                    Console.WriteLine("Add new key, value pair");
+                    addElement();
                     break;
                 case 5:
                     // add a new value to the specified key
@@ -67,9 +67,14 @@ public class Test {
     }
 
     private static void populate() {
-        testDict.Add(3, "Ryan");
-        testDict.Add(2, "Ivory");
-        testDict.Add(1, "Ismael");
+        if (testDict.Count() == 0) {
+            testDict.Add(3, "Ryan");
+            testDict.Add(2, "Ivory");
+            testDict.Add(1, "Ismael");
+        }
+        else {
+            Console.WriteLine("Dictionary already includes test data.");
+        }
     }
 
     private static void display() {
@@ -81,30 +86,54 @@ public class Test {
     }
 
     private static void removeKey() {
-        Console.WriteLine("\nEnter a key to remove: ");
-        int keyToRemove;
-        while (true) {
-            try {
-                keyToRemove = Convert.ToInt32(Console.ReadLine());
-                break;
-            }
-            catch(Exception e) {
-                Console.WriteLine(e.Message);
-                Console.WriteLine("Integer input only");
-            }
-        }
-
-        if (testDict.ContainsKey(keyToRemove)) {
-            testDict.Remove(keyToRemove);
-            Console.WriteLine($"Key: {keyToRemove} has been removed\n");
+        if (testDict.Count() == 0) {
+            Console.WriteLine("Populate the dictionary with data first!");
         }
         else {
-            Console.WriteLine("Key not found.\n");
+            Console.WriteLine("\nEnter a key to remove: ");
+            int keyToRemove;
+            while (true) {
+                try {
+                    keyToRemove = Convert.ToInt32(Console.ReadLine());
+                    break;
+                }
+                catch(Exception e) {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine("Integer input only");
+                }
+            }
+
+            if (testDict.ContainsKey(keyToRemove)) {
+                testDict.Remove(keyToRemove);
+                Console.WriteLine($"Key: {keyToRemove} has been removed\n");
+            }
+            else {
+                Console.WriteLine("Key not found.\n");
+            }
         }
     }
 
     private static void addElement() {
-        // TODO: Add an element to the dictionary
+        Console.WriteLine("\nEnter key to add: ");
+        int keyToAdd;
+        while (true) {
+            try {
+                keyToAdd = Convert.ToInt32(Console.ReadLine());
+                break;
+            }
+            catch (Exception e) {
+                Console.WriteLine(e.Message);
+            }
+        }
+        if (testDict.ContainsKey(keyToAdd)) {
+            Console.WriteLine("Dictionary already contains that key!");
+        }
+        else {
+            Console.WriteLine($"Enter value associated with key {keyToAdd}: ");
+            string valueToAdd = Console.ReadLine();
+            testDict.Add(keyToAdd, valueToAdd);
+            Console.WriteLine($"{keyToAdd}, {valueToAdd} has been added!");
+        }
     }
 
     private static void changeValue() {
