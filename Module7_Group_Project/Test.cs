@@ -5,10 +5,10 @@ public class Test {
 
     public void testDictionary() {
         Console.WriteLine("Choose From the options below to interact with the dictionary.\n");
+        
         bool exitLoop = false;
         while (!exitLoop) {
             displayOptions();
-            //int userInput = getChoice();
             switch (getChoice()) {
                 case 1:
                     // populate the dictionary
@@ -20,7 +20,7 @@ public class Test {
                     break;
                 case 3:
                     // remove a key
-                    Console.WriteLine("Remove Key");
+                    removeKey();
                     break;
                 case 4:
                     // add a new key, value pair
@@ -46,6 +46,7 @@ public class Test {
     }
 
     private static void displayOptions() {
+        Console.WriteLine("---MENU---\n");
         Console.WriteLine("1. Populate the dictionary.\n2. Display Contents\n3. Remove a Key.");
         Console.WriteLine("4. Add New Key and Value\n5. Add new Value to Key\n6. Sort\n7. Exit");
     }
@@ -66,13 +67,13 @@ public class Test {
     }
 
     private static void populate() {
-        testDict.Add(1, "Ryan");
+        testDict.Add(3, "Ryan");
         testDict.Add(2, "Ivory");
-        testDict.Add(3, "Ismael");
+        testDict.Add(1, "Ismael");
     }
 
     private static void display() {
-        Console.WriteLine("\n***Displaying Dictionary Contents***\n");
+        Console.WriteLine("\n---Displaying Dictionary Contents---\n");
         foreach(var entry in testDict) {
             Console.WriteLine($"Key: {entry.Key} Value: {entry.Value}");
         }
@@ -80,7 +81,26 @@ public class Test {
     }
 
     private static void removeKey() {
-        // TODO: Remove a specified element
+        Console.WriteLine("\nEnter a key to remove: ");
+        int keyToRemove;
+        while (true) {
+            try {
+                keyToRemove = Convert.ToInt32(Console.ReadLine());
+                break;
+            }
+            catch(Exception e) {
+                Console.WriteLine(e.Message);
+                Console.WriteLine("Integer input only");
+            }
+        }
+
+        if (testDict.ContainsKey(keyToRemove)) {
+            testDict.Remove(keyToRemove);
+            Console.WriteLine($"Key: {keyToRemove} has been removed\n");
+        }
+        else {
+            Console.WriteLine("Key not found.\n");
+        }
     }
 
     private static void addElement() {
