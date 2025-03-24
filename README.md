@@ -1,10 +1,10 @@
-## COP2360
+# COP2360
 
-# C# Programming
+## C# Programming
 
 Learning how to code with C#
 
-# Module 7 Project
+## Module 7 Project
 
 All code is implemented in the Test.cs file
 Console application for testing dictionary functions
