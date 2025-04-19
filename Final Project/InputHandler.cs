@@ -26,7 +26,14 @@ class InputHandler {
         return input;
     }
 
-    public static double getDouble() {
-        return 0.00;
+    public static double getHourlyRate() {
+        // TODO
+        return 18.75;
+    }
+
+    public static DateTime getStartDate() {
+        // TODO
+        DateTime date = new DateTime(2025, 4, 27);
+        return date;
     }
 }

@@ -15,7 +15,6 @@ class Subcontractor : Contractor {
 
     public Subcontractor() {
         shift = InputHandler.getShift();
-        //hourlyRate = InputHandler.getDouble();
-        hourlyRate = 20.75;
+        hourlyRate = InputHandler.getHourlyRate(); // THIS NEEDS TO BE IMPLEMENTED
     }
 }
