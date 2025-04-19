@@ -15,6 +15,9 @@ class InputHandler {
             strInput = Console.ReadLine() ?? string.Empty;
             try {
                 input = Convert.ToInt32(strInput);
+                if (input < 1 || input > 2) {
+                    throw new Exception("Invalid Input");
+                }
                 break;
             } catch(Exception e) {
                 Console.WriteLine(e.Message);
