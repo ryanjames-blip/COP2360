@@ -1,7 +1,7 @@
 
 class Subcontractor : Contractor {
-    const int DAY = 1;
-    const int NIGHT = 2;
+    public const int DAY = 1;                      
+    public const int NIGHT = 2;
     private int shift;
     public int Shift {
         get { return shift; }
@@ -14,6 +14,8 @@ class Subcontractor : Contractor {
     }
 
     public Subcontractor() {
-        Console.WriteLine("Created a subcontractor object");
+        shift = InputHandler.getShift();
+        //hourlyRate = InputHandler.getDouble();
+        hourlyRate = 20.75;
     }
 }
