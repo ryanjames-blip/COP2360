@@ -23,4 +23,10 @@ class Contractor {
         
         Console.WriteLine("Created a contractor object");
     }
+
+    public Contractor(String n, String num, DateTime d) {
+        name = n;
+        number = num;
+        startDate = d;
+    }
 }

@@ -17,4 +17,9 @@ class Subcontractor : Contractor {
         shift = InputHandler.getShift();
         hourlyRate = InputHandler.getHourlyRate(); // THIS NEEDS TO BE IMPLEMENTED
     }
+
+    public Subcontractor(String n, String num, DateTime d, int s, double h) : base(n, num, d) {
+        shift = s;
+        hourlyRate = h;
+    }
 }
