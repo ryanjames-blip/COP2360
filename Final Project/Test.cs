@@ -9,8 +9,14 @@ class Test {
 
     public Test() {
         testSubs = new List<Subcontractor>();
+        Random rand = new Random();
+        
         for (int i = 0; i < 5; i++) {
-            Subcontractor s = new Subcontractor("Test" + i.ToString(), "123", new DateTime(2025, 4, 27), 1, 20);
+            Subcontractor s = new Subcontractor("Test" + i.ToString(), 
+                                                "123", 
+                                                new DateTime(2025, rand.Next(1, 13), rand.Next(1, 30)), 
+                                                rand.Next(1, 3), 
+                                                rand.Next(15, 25));
             testSubs.Add(s);
         }
     }
@@ -20,8 +26,8 @@ class Test {
             Console.WriteLine("Name:\t" + s.Name);
             Console.WriteLine("Number:\t" + s.Number);
             Console.WriteLine("Start:\t" + s.StartDate.ToString("dd MMM yyyy"));
-            Console.WriteLine("Shift:\t" +s.Shift);
-            Console.WriteLine("Rate:\t" + s.HourlyRate);
+            Console.WriteLine("Shift:\t" + s.Shift);
+            s.printPayRates();
             Console.WriteLine();
         }
     }

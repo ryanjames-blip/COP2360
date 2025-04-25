@@ -22,4 +22,12 @@ class Subcontractor : Contractor {
         shift = s;
         hourlyRate = h;
     }
+
+    private double calculateNightRate() {
+        return hourlyRate * 1.03;
+    }
+
+    public void printPayRates() {
+        Console.WriteLine($"Daytime Rate:\t{hourlyRate.ToString("C")}\nNighttime Rate:\t${calculateNightRate().ToString("C")}");
+    }
 }
