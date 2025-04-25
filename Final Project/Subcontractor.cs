@@ -27,7 +27,16 @@ class Subcontractor : Contractor {
         return hourlyRate * 1.03;
     }
 
-    public void printPayRates() {
+    private void printPayRates() {
         Console.WriteLine($"Daytime Rate:\t{hourlyRate.ToString("C")}\nNighttime Rate:\t${calculateNightRate().ToString("C")}");
+    }
+
+    public void printInfo() {
+        Console.WriteLine("Name:\t" + Name);
+        Console.WriteLine("Number:\t" + Number);
+        Console.WriteLine("Start:\t" + StartDate.ToString("dd MMM yyyy"));
+        Console.WriteLine("Shift:\t" + shift);
+        printPayRates();
+        Console.WriteLine();
     }
 }

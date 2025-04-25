@@ -20,8 +20,6 @@ class Contractor {
         name = InputHandler.getString("Name");
         number = InputHandler.getString("Number");
         startDate = InputHandler.getStartDate(); // THIS NEEDS TO BE IMPLEMENTED
-        
-        Console.WriteLine("Created a contractor object");
     }
 
     public Contractor(String n, String num, DateTime d) {

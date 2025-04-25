@@ -7,8 +7,10 @@ COP 2360
 class Program {
     static void Main(string[] args) {
 
-        Test t = new Test();
-        t.printList();
+        //Test t = new Test();
+        //t.printList();
+
+        Menu m = new Menu();
 
         /*
         Leaving this here to give an example of DateTime object
