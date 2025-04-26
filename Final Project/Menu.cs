@@ -7,7 +7,7 @@ class Menu {
         bool exit = false;
         while(!exit) {
             int input;
-            Console.WriteLine("---MAIN MENU---\n");
+            Console.WriteLine("\n---MAIN MENU---\n");
             Console.WriteLine("1. Add a new Subcontractor");
             Console.WriteLine("2. Display Subcontractor List");
             Console.WriteLine("3. Exit");

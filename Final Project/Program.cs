@@ -7,10 +7,15 @@ COP 2360
 class Program {
     static void Main(string[] args) {
 
-        //Test t = new Test();
-        //t.printList();
-
-        Menu m = new Menu();
+        Console.WriteLine("1 for test\n2 for menu");
+        int input = Convert.ToInt32(Console.ReadLine());
+        if (input == 1) {
+            Test t = new Test();
+            t.printList();
+        }
+        else {
+            Menu m = new Menu();
+        }
 
         /*
         Leaving this here to give an example of DateTime object

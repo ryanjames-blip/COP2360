@@ -27,8 +27,22 @@ class InputHandler {
     }
 
     public static double getHourlyRate() {
-        // TODO
-        return 18.75;
+        double input;
+        string strInput;
+        while (true) {
+            Console.WriteLine("Enter hourly rate: ");
+            strInput = Console.ReadLine() ?? string.Empty;
+            try {
+                input = Convert.ToDouble(strInput);
+                if (input <= 0) {
+                    throw new Exception("Invalid Input");
+                }
+                break;
+            } catch(Exception e) {
+                Console.WriteLine(e.Message);
+            }
+        }
+        return input;
     }
 
     public static DateTime getStartDate() {

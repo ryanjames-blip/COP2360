@@ -17,6 +17,7 @@ class Contractor {
     }
 
     public Contractor() {
+        Console.WriteLine("\n---ADD SUBCONTRACTOR---\n");
         name = InputHandler.getString("Name");
         number = InputHandler.getString("Number");
         startDate = InputHandler.getStartDate(); // THIS NEEDS TO BE IMPLEMENTED

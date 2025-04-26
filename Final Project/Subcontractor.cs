@@ -16,6 +16,7 @@ class Subcontractor : Contractor {
     public Subcontractor() {
         shift = InputHandler.getShift();
         hourlyRate = InputHandler.getHourlyRate(); // THIS NEEDS TO BE IMPLEMENTED
+        Console.WriteLine("SUBCONTRACTOR ADDED\n");
     }
 
     public Subcontractor(String n, String num, DateTime d, int s, double h) : base(n, num, d) {
@@ -23,20 +24,21 @@ class Subcontractor : Contractor {
         hourlyRate = h;
     }
 
-    private double calculateNightRate() {
-        return hourlyRate * 1.03;
-    }
-
-    private void printPayRates() {
-        Console.WriteLine($"Daytime Rate:\t{hourlyRate.ToString("C")}\nNighttime Rate:\t${calculateNightRate().ToString("C")}");
+    private double calculatePayRate() {
+        if (shift == DAY) {
+            return hourlyRate;
+        }
+        else {
+            return hourlyRate * 1.03;
+        }
     }
 
     public void printInfo() {
-        Console.WriteLine("Name:\t" + Name);
-        Console.WriteLine("Number:\t" + Number);
-        Console.WriteLine("Start:\t" + StartDate.ToString("dd MMM yyyy"));
-        Console.WriteLine("Shift:\t" + shift);
-        printPayRates();
+        Console.WriteLine("Name:\t\t" + Name);
+        Console.WriteLine("Number:\t\t" + Number);
+        Console.WriteLine("Start:\t\t" + StartDate.ToString("dd MMM yyyy"));
+        Console.WriteLine("Shift:\t\t" + shift);
+        Console.WriteLine("Hourly Rate:\t" + calculatePayRate().ToString("C"));
         Console.WriteLine();
     }
 }
