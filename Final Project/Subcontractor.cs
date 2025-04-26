@@ -14,8 +14,10 @@ class Subcontractor : Contractor {
     }
 
     public Subcontractor() {
-        shift = InputHandler.getShift();
-        hourlyRate = InputHandler.getHourlyRate(); // THIS NEEDS TO BE IMPLEMENTED
+        shift = InputHandler.validateIntWithMinMax(DAY + " for day shift\nor " + NIGHT + " for night shift:", 
+                                                   1, 
+                                                   2);
+        hourlyRate = InputHandler.getHourlyRate(); 
         Console.WriteLine("SUBCONTRACTOR ADDED\n");
     }
 

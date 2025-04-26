@@ -18,6 +18,7 @@ class Menu {
                     subs.Add(s);
                     break;
                 case 2:
+                    Console.WriteLine("\n---SUBCONTRACTORS---\n");
                     foreach(Subcontractor sub in subs) {
                         sub.printInfo();
                     }
