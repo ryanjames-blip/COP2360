@@ -1,5 +1,7 @@
 ﻿/*
 Ryan DenBleyker
+Ivory Sherrod
+Ismael Trevino Martinez 
 4/27/2025
 COP 2360
 */
