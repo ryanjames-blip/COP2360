@@ -1,3 +1,8 @@
+/*
+Ryan DenBleyker
+4/27/2025
+COP 2360
+*/
 
 class InputHandler {
     public static string getString(string field) {
@@ -26,6 +31,7 @@ class InputHandler {
     }
 
     public static DateTime getStartDate() {
+        Console.WriteLine("\nEnter Start Date Info");
         int year = validateIntWithMinMax("year", 1900, 2100);
         int month = validateIntWithMinMax("month", 1, 12);
         int day = validateIntWithMinMax("day", 1, 31);

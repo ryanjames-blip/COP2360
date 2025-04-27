@@ -1,9 +1,17 @@
+/*
+Ryan DenBleyker
+4/27/2025
+COP 2360
+*/
 
 class Menu {
     private List<Subcontractor> subs;
 
     public Menu() {
         subs = new List<Subcontractor>();
+    }
+
+    public void run() {
         bool exit = false;
         while(!exit) {
             int input;

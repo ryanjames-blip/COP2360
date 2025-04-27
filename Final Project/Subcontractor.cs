@@ -1,3 +1,8 @@
+/*
+Ryan DenBleyker
+4/27/2025
+COP 2360
+*/
 
 class Subcontractor : Contractor {
     public const int DAY = 1;                      
@@ -14,7 +19,7 @@ class Subcontractor : Contractor {
     }
 
     public Subcontractor() {
-        shift = InputHandler.validateIntWithMinMax(DAY + " for day shift\nor " + NIGHT + " for night shift:", 
+        shift = InputHandler.validateIntWithMinMax(DAY + " for day shift\nor " + NIGHT + " for night shift", 
                                                    1, 
                                                    2);
         hourlyRate = InputHandler.getHourlyRate(); 

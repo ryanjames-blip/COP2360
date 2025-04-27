@@ -1,3 +1,8 @@
+/*
+Ryan DenBleyker
+4/27/2025
+COP 2360
+*/
 
 class Contractor {
     private string name;
@@ -20,7 +25,7 @@ class Contractor {
         Console.WriteLine("\n---ADD SUBCONTRACTOR---\n");
         name = InputHandler.getString("Name");
         number = InputHandler.getString("Number");
-        startDate = InputHandler.getStartDate(); // THIS NEEDS TO BE IMPLEMENTED
+        startDate = InputHandler.getStartDate();
     }
 
     public Contractor(String n, String num, DateTime d) {
